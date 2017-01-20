@@ -1,0 +1,174 @@
+@charset "utf-8";
+
+/*reset*/
+*{margin: 0;padding: 0;border:0 none;outline:0 none;}
+body,html{font-size:16px;font-family:"Microsoft YaHei",微软雅黑,Helvetica,Tahoma,StSun,SimSun,sans-serif; background:#fff7ee;color:#3d3d3d;-webkit-text-size-adjust:none;height:100%;width:100%; min-width: 320px;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, iframe {display: block}
+div, ul, li { zoom: 1; }
+ul, li, ol { list-style: none; /*list-style-type: none;*/ }
+ol li{display:list-item;list-style-type:decimal ;margin-left:20px;}
+img { border: 0 none; }
+:focus{outline:0}
+a,button { /* color: initial; */text-decoration: none;-webkit-tap-highlight-color: rgba(255,255,255,0); }
+
+a[href^=tel] { color: inherit; text-decoration: none; }
+h1, h2, h3, h4, h5, h6 { font-size: 12px; line-height: normal; font-style: normal; font-weight:normal; }
+
+em, i{font-style: normal;}
+
+.one-line-msg{width:100vw;display: table-cell; text-align:center; vertical-align:middle;margin:0 auto;} 
+.th{height: 15vh;}
+.o-b{background-color: #ba8748;}
+.o-f{color: #ba8748;}
+.small {font-size: 12px;margin: 15px 8px 8px 15px;}
+.red{color: #ff0000;}
+.big{font-size: 14px;}
+.tab{margin-right: 40px}
+.f-m{font-size:14px;}
+.bottom{margin-bottom: 20px;}
+.sub-btn{
+  line-height:40px;
+  height:40px;
+  width:92vw;
+  color:#ffffff;;
+  font-size:16px;
+  font-weight:bold;
+  font-family:Arial;
+  -webkit-border-top-left-radius:5px;
+  -moz-border-radius-topleft:5px;
+  border-top-left-radius:5px;
+  -webkit-border-top-right-radius:5px;
+  -moz-border-radius-topright:5px;
+  border-top-right-radius:5px;
+  -webkit-border-bottom-left-radius:5px;
+  -moz-border-radius-bottomleft:5px;
+  border-bottom-left-radius:5px;
+  -webkit-border-bottom-right-radius:5px;
+  -moz-border-radius-bottomright:5px;
+  border-bottom-right-radius:5px;
+  -moz-box-shadow: inset 0px 0px 0px 0px #ffffff;
+  -webkit-box-shadow: inset 0px 0px 0px 0px #ffffff;
+  box-shadow: inset 0px 0px 0px 0px #ffffff;
+  text-align:center;
+  display:inline-block;
+  text-decoration:none;
+  vertical-align:middle;
+}
+.sub-btn:hover{
+  background-color:#b24926;
+}
+.user_phone {
+    border: 1px solid #e8a044;
+    width: 80%;
+    margin-left: 7%;
+    height: 36px;
+    border-radius: 3px;
+    font-size: 15px;
+    line-height: 36px;
+    color: #999999;
+}
+友情链接
+js与css在线调试和分享bug禅思-在线bug管理系统iteye设计达人觉唯设计学习css布局博客园推酷segmentfaultcsdn
+粤ICP备15075547号
+.allD{
+   font-size:20px;sub-b
+}
+.banner{
+	width:100%;
+	height:auto;
+}
+
+.tWordD{
+    width:90%;
+	height:auto;
+	margin:0;
+	padding:5%;
+	position:relative;
+}
+.tWordD .giftD{
+    width:25%;
+	height:auto;
+	margin:0;
+	padding:0;
+	left:0;
+	top:0;
+	overflow:hidden;
+	position:absolute;
+}
+.giftI{
+    width:100%;
+	height:auto;
+}
+.tWordD .wordD{
+    width:65%;
+	height:auto;
+	margin:0;
+	padding:0;
+	float:right;
+	text-align:justify; 
+	text-justify:inter-ideograph;
+}
+.wordS{
+    color:#e57b66;
+}
+.wtP{
+    color:#dc3c14;
+	font-size:0.9rem;
+}
+.wtD{
+    text-align: center;
+}
+.quesD{
+    text-align:left;
+	margin:0;
+	padding:5%;
+	font-size:1.2rem;
+}
+.quesD i{background: url('../images/choose1.png') no-repeat center center; display: inline-block; width: 20px; height: 20px; float: left; position: relative; margin-right: 15px; background-size: contain;}
+.quesD .q{background: url('../images/choose2.png') no-repeat center center; display: inline-block; width: 20px; height: 20px; float: left; position: relative; margin-right: 15px; background-size: contain;}
+.submitD{width:100%; margin:0; padding:0; height:100%; position:relative;}
+.submitD .timeD{
+   position:absolute;
+   right:0;
+   top:0;
+   width:30%;
+   height:3em;
+   background:#999999;
+   color:#fff;
+   text-align:center;
+   vertical-align: middle;
+   line-height:3em;
+}
+.submitD .getcodeD{
+   position:absolute;
+   left:0;
+   bottom:0;
+   height:2.9em;
+   width:70%;
+   border:1px solid #e8a044;
+}
+.submitD .getcodeD .textI{
+   height:100%;
+   width:90%;
+   float:right;
+   font-size:1.1em;
+   color:#b8b8b8;
+}
+.submitD .getcodeD .starI{
+   width:4%;
+   position:absolute;
+   top:1.1em;
+   left:4%;
+}
+.submitD .codeD{
+   position:absolute;
+   right:0;
+   bottom:0;
+   width:30%;
+   height:3em;
+   background:#e8a044;
+   color:#fff;
+   text-align:center;
+   vertical-align: middle;
+   line-height:3em;
+}

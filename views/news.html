@@ -1,0 +1,143 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="apple-touch-fullscreen" content="YES">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="http://static.prosnav.com/js/news.js"></script>
+        <style type="text/css">
+        	.right{float:right;}
+        	.icon{width:25px; height:25px;}
+        </style>
+	</head>
+	<body>
+		<div data-role="page" id="newsList" data-theme="a">
+			<div data-role="header">
+				<img src="http://static.prosnav.com/image/prosnav.png" class='icon'>
+				<span class='right' id='username'>guest<span>
+			</div>
+			<div data-role="content">
+				<ul id='news' data-role="listview">
+					<li>
+					  	<a href="#newsContent" data-transition="slide">
+			          		<h2>Google Chrome</h2>
+			          		<p>Google Chrome is a free, open-source web browser. Released in 2008.</p>
+					  	</a>
+				  	</li>
+				</ul>
+			</div>
+			<div data-role="footer" id='more'>
+				<div data-role="navbar">
+					<ul data-role="listview" width='100%' height='100%'><li><a href="#" data-icon="plus" data-role="button" data-iconpos="notext"></a></li></ul>
+				</div>
+			</div>
+		</div>
+		
+		<div data-role="page" id="newsContent" data-theme="a">
+			<div data-role="header">
+				<h1 id='title'></h1>
+			</div>
+			<div data-role="content">
+				<div id='content'></div>
+			</div>
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		$(function(){
+			baseUrl = '/wxqyh/v1'
+
+			function createNewsItem(field) {
+				liEle = $('<li></li>');
+				liEle.addClass('ui-first-child').addClass('ui-last-child');
+				aEle = $('<a href="#newsContent" data-transition="slide"></a>');
+				aEle.addClass('ui-btn').addClass('ui-btn-icon-right').addClass('ui-icon-carat-r');
+				h2Ele = $('<h2>'+ field.title +'</h2>');
+				pEle = $('<p>'+ field.summary +'</p>');
+				aEle.append(h2Ele);
+				aEle.append(pEle);
+				liEle.append(aEle);
+
+				aEle.click(function() {
+					loadNewsContent(field.id)
+				});
+
+				return liEle;
+			}
+
+
+			function loadNewsContent(newsid) {
+				contentUrl = baseUrl + '/news/' + newsid;
+				$.ajax({
+					url: contentUrl,
+					success: function(data, status, xhr) {
+						$('#newsContent').find('#title').html(data.title)
+						$('#newsContent').find('#content').html(data.content)
+					},
+					dataType: 'json',
+					xhrFields: {
+						withCredentials: true
+					}
+				});
+			}
+
+			function createNewsForm(currPage, pageCount) {
+				return {"currPage": currPage,
+					"pageCount": pageCount
+				};
+			}
+
+			function DataInfo(currPage, pageCount, total) {
+				this.currPage = currPage;
+				this.pageCount = pageCount;
+				this.total = total || 0;
+			}
+
+			function appendNews(newsObject) {
+				dataLog.total = newsObject.total
+				$('#username').html(newsObject.username)
+				$.each(newsObject.news, function(i, field){
+					$("#news").append(createNewsItem(field));
+				});
+			}
+
+			var dataLog = new DataInfo(1, 5);
+			dataLog.isLastPage = function() {
+				if (this.currPage * this.pageCount >= this.total) {
+					return true;
+				}
+				return false;
+			};
+
+			function loadData() {
+				$.ajax({
+					url: baseUrl + '/news/',
+					data: createNewsForm(dataLog.currPage, dataLog.pageCount),
+					success: function(data, status, xhr) {
+						console.log(data);
+						appendNews(data);
+						dataLog.total = data.total;
+						if (dataLog.isLastPage()) {
+							$('#more').remove();
+						}
+					},
+					dataType: 'json',
+					xhrFields: {
+						withCredentials: true
+					}
+				});
+
+			}
+			$('#more').click(function () {
+				dataLog.currPage++;
+				loadData();
+			});
+			loadData();
+		});
+
+
+	</script>
+</html>

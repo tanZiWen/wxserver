@@ -1,0 +1,20 @@
+html {position: relative;min-height: 100%;}
+body {margin-bottom: 60px;}
+.footer {position: absolute;bottom: 0;width: 100%;height: 60px;background-color: #f5f5f5;}
+body > .container {padding: 80px 15px 0; width: 60%;}
+.container .text-muted {margin: 20px 0;}
+.footer > .container {padding-right: 15px;padding-left: 15px;}
+code {font-size: 80%;}
+.navbar-brand>img{width: 20px;float: left;}
+td>i {cursor:pointer; padding: 5%;}
+i.icon-cancel{color:#c7254e;}
+thead>tr>th{text-align: center;background-color: #ccc}
+.editmodal{width: 850px;}
+.editmodal>div>span{width:300px;}
+.editmodal>div>.textinput{width: 550px;}
+#pageopt{width: 4%;height: 10%;float: right;position: absolute;top: 23%;right: 15%;}
+#pageopt>div{width: 100%; height: 50%;border: 1px solid #ccc;}
+#pageopt>div>i{position: relative;top: 30%;left: 35%;}
+#pageopt>div:hover, .grayhand{background-color: #eee; cursor:pointer;}
+.navbar-header>ul>li>button{padding: 16px 10px;}
+.confirm{padding-top: 15%;}

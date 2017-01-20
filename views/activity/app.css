@@ -1,0 +1,9 @@
+div.position {margin-top: 3%;color:#000;}
+.form-pan {margin-top: 5%;}
+.form-pan>div {margin-top: 1%;}
+.commit {margin-top:20%;}
+.page-header>h4{color: #000;}
+.warn{border: 1px solid red;}
+.col-center-block { float: none; display: block; margin-left: auto; margin-right: auto;} 
+.one-line-msg{height: 100vh;width:100vw;display: table-cell; text-align:center; vertical-align:middle;margin:0 auto; } 
+.active{display:block;}

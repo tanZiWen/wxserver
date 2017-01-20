@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prosnav Publish Management</title>
+    <!-- Bootstrap -->
+    <link href="http://static.prosnav.com/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/animation.css"><!--[if IE 7]><link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="shortcut icon" href="/image/favicon.ico">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://static.prosnav.com/bootstrap/js/bootstrap.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
+    <link rel="stylesheet" href="css/management.css">
+    <script src="http://cdn.bootcss.com/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="js/management.js"></script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">
+            <small>产品信息发布</small>
+            <img src="image/prosnav.png">
+          </a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button id='add' type="button" data-toggle="modal" data-target=".newsmodal"><b><i class="icon-plus"></i>添加</b></button></li>
+          </ul>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id='pageopt'>
+        <div id='pre'><i class="demo-icon icon-up-open"></i></div>
+        <div id='next'><i class="demo-icon icon-down-open"></i></div>
+      </div>
+    <!-- Begin page content -->
+    <div class="container">
+      <table class="table table-bordered table-hover table-striped">
+          <thead>
+            <tr>
+              <th width='25%'>标题</th>
+              <th>摘要</th>
+              <th width='15%'>产品编码</th>
+              <th width='10%'>操作</th>
+            </tr>
+          </thead>
+          <tbody id='news'>
+            <tr>
+              <td>股市风云</td><td>今天你涨停了吗?</td><td>code1</td><td><i class="icon-edit" data-toggle="modal" data-target=".newsmodal"></i><i class="icon-plus"  data-toggle="modal" data-target=".newsmodal"></i><i class="icon-cancel"></i></td>
+           </tr>
+          </tbody>
+      </table>
+    </div>  
+
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright © 2015 帆茂投资管理有限公司</p>
+      </div>
+    </footer>
+
+
+    <div class="modal fade newsmodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">新闻明细</h4>
+          </div>
+          <div class="modal-body">
+            <div class='container editmodal'>
+              <div class="input-group">
+                <input type='hidden' id='newsid'>
+                <span class="input-group-addon" id="basic-addon1">标题</span>
+                <input id='newstitle' type="text" class="form-control textinput" placeholder="title" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">摘要</span>
+                <input id='newssummary' type="text" class="form-control textinput" placeholder="summary" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">产品编码</span>
+                <input id='newspcode' type="text" class="form-control textinput" placeholder="product code" aria-describedby="basic-addon1">
+              </div>      
+              <textarea id="ckeditor1"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id='save'>Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>
